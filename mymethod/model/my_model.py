@@ -78,7 +78,6 @@ def blockconv(myfilter,kernels,mystride,x,sty):
     else:
         x_all = BatchNormalization()(MaxPool1D(pool_size=2,strides=2,padding='same')(Conv1D(filters=myfilter, kernel_size=kernels,
                                             strides=mystride, padding="same", activation='relu', use_bias=False)(x)))
-    x_all = cbam_block(x_all)
     return x_all
 
 
